@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public void doConverti(View view) {
         if (inv) {
             String fahrenheit = input.getText().toString();
-            int f = 0;
+            int f;
             if (fahrenheit.contains(".") || fahrenheit.contains(",")) {
                 double prov = Double.parseDouble(fahrenheit);
                 f = (int)prov;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 f = Integer.parseInt(fahrenheit);
             }
             double c = (double)(f - 32) / 1.8;
-            output.setText(Double.toString(c));
+            output.setText(String.format("%.1f", c));
         } else {
             String celsius = input.getText().toString();
             double c = Double.parseDouble(celsius);
